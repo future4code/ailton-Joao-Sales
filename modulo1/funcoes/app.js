@@ -88,41 +88,41 @@
 
 //QUESTÃO 03
 
-const num1 = Number(prompt("digite um numero"))
-const num2 = Number(prompt("digite outro numero"))
+// const num1 = Number(prompt("digite um numero"))
+// const num2 = Number(prompt("digite outro numero"))
 
-function soma(num1, num2) {
+// function soma(num1, num2) {
 
-    const soma = num1 + num2
+//     const soma = num1 + num2
  
-    return soma
-    }
+//     return soma
+//     }
     
-    console.log(soma(num1, num2))
+//     console.log(soma(num1, num2))
 
-    function subtracao(num1, num2) {
+//     function subtracao(num1, num2) {
 
-     const  subtracao = num1 - num2
+//      const  subtracao = num1 - num2
      
-        return subtracao
-        }
+//         return subtracao
+//         }
         
-        console.log(subtracao(num1, num2))
+//         console.log(subtracao(num1, num2))
     
-        function multiplicação(num1, num2) {
+//         function multiplicação(num1, num2) {
 
-            multiplicação = num1 * num2
+//             multiplicação = num1 * num2
          
-            return multiplicação
-            }
+//             return multiplicação
+//             }
             
-            console.log(multiplicação(num1, num2))
+//             console.log(multiplicação(num1, num2))
 
-            function divisao(num1, num2) {
+//             function divisao(num1, num2) {
 
-               const divisão = num1 / num2
+//                const divisão = num1 / num2
              
-                return divisão
-                }
+//                 return divisão
+//                 }
                 
-                console.log(divisao(num1, num2))
+//                 console.log(divisao(num1, num2))
