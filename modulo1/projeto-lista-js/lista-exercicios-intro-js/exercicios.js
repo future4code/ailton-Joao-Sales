@@ -9,7 +9,7 @@ function soma(num1, num2) {
 // EXERCÍCIO 0B
 function imprimeMensagem() {
   // implemente sua lógica aqui
-  const mensagem = prompt('Digite uma mensagem!')
+  let mensagem = prompt('Digite uma mensagem!')
 
   console.log(mensagem)
 }
@@ -119,17 +119,31 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+  let atualYear = Number(prompt('digite o ano atual'))
+  let bornYear = Number(prompt('digite seu ano de nascimento'))
+  let idEmission = Number(prompt('qual o ano de emissão do seu rg?'))
+  let tempoEmissao =  atualYear - idEmission 
+  let idadeUser = atualYear - bornYear
+  let comparacao = (idadeUser <= 20 && tempoEmissao >= 5)||(idadeUser > 20 && idadeUser <= 50 && tempoEmissao >= 10)||(idadeUser > 50 && tempoEmissao >= 15)
 
+  console.log(comparacao)
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
-
+ const comparacao =  ano % 4 === 0 && (ano % 100 !== 0 || ano % 400 === 0)
+ return comparacao
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+  let maiorIdade = prompt('Voce possui mais que 18 anos?')
+  let ensinoMedio = prompt('possui o medio completo?')
+  let disponibilidade = prompt('voce possui disponibilidade?')
+  let comparacao = maiorIdade === 'sim' && ensinoMedio === 'sim' && disponibilidade === 'sim'
+  
+  console.log(comparacao)
 
 }
