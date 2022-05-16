@@ -53,25 +53,6 @@ const novosApelidos = {
 
 
 //QUESTÃO 02
-
-
-const peopleOne = {
-    name: 'gabriel',
-    age: 20,
-    work: 'estudante'
-}
-
-const peopleTwo = {
-    name: 'maria',
-    age: 25,
-    work: 'empresaria'
-}
-
-function dataPerson() {
-
-}
-
-//QUESTÃO 02
 //A)
 const pizzaiolo = {
     nome: 'micael',
