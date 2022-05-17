@@ -78,7 +78,7 @@ function array(details) {
 //QUESTÃO 03
 
 //A)
-const varVazia = []
+const emptyCar = []
 
 //B)
 const maca = {
@@ -94,10 +94,63 @@ const morango = {
 }
 
 function add(adc) {
-    return varVazia.push(adc)
+    return emptyCar.push(adc)
 }
-add(maca)
-add(banana)
-add(morango)
+// add(maca)
+// add(banana)
+// add(morango)
 
-console.log(varVazia)
+// console.log(emptyCar)
+
+//DESAFIO
+
+//DESAFIO 01
+
+// function perguntas() {
+//     const questions = {
+//         nome: prompt('digite seu nome'),
+//         profissao: prompt('digite sua profissão'),
+//         idade: prompt('digite sua idade')
+
+//     }
+//     console.log(questions)
+// }
+// perguntas()
+
+//DESAFIO 02
+const filme1 = {
+    movie: 'Orgulho e Preconceito',
+    year: 2005
+}
+const filme2 = {
+    movie: 'Os Simpsons',
+    year: 2007
+}
+
+function filmes(film1, film2) {
+    console.log('O primeiro filme foi lançado antes do segundo?',(film1.year < film2.year))
+    console.log('O primeiro filme foi lançado no mesmo ano do segundo',(film1.year === film2.year))
+    return film1, film2
+}
+// filmes(filme1, filme2)
+
+//DESAFIO 03
+
+function auxilio(aux) {
+    aux.disponibilidade = !aux.disponibilidade
+    return console.log(aux)
+}
+// auxilio(maca)
+// auxilio(banana)
+// auxilio(morango)
+
+// console.log(emptyCar)
+
+
+
+
+
+
+
+
+
