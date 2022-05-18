@@ -103,43 +103,8 @@
 //     console.log('Escolha outro filme :(')
 // }
 
-//DESAFIO 02
 
-// const nomeCompleto = prompt('Digite seu nome completo')
-// const tipoDeJogo = prompt(`                 Digite o tipo de jogo:
-//                     IN - internacional
-//                     DO - doméstico`)
-// const categorias = Number(prompt('digite a categoria: 1, 2, 3 ou 4'))
-// const quantidadeIngressos = Number(prompt('Qauntos ingressos você quer comprar?'))
 
-constQuestions = () => {
-    nome = prompt('Digite seu nome completo'),
-        tipoDeJogo = prompt(`Digite o tipo de jogo: IN - internacional / DO - doméstico`),
-        etapaDeJogo = prompt('idique a etapa do jogo: SF - DT - FI'),
-    categorias = Number(prompt('digite a categoria: 1, 2, 3 ou 4')),
-        quantidadeIngressos = Number(prompt('Qauntos ingressos você quer comprar?'))
-        
-}
-console.log(`
-            ---Dados da compra---
-            Nome do cliente: $ {}
-            Tipo de jogo: $ {}
-            Etapa do jogo: $ {}
-            categoria: $ {}
-            Quantidade de ingressos $ {}
-            ---valores---
-            Valor do ingresso: $ {}
-            Valor total: $ {}`)
 
-retornaDados = (dados) => {
-    switch (dados) {
-        case : 'SF'
-        return 'semi-finais'
-            
-            break;
-    
-        default:
-            break;
-    }
-}
-     
+
+
