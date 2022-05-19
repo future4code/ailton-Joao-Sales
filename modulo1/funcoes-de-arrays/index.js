@@ -105,12 +105,16 @@ const pokemons = [
     { nome: "Vulpix", tipo: "fogo" },
     { nome: "Squirtle", tipo: "água" },
     { nome: "Psyduck", tipo: "água" },
- ]
- const pokes = pokemons.map((item, index, array) => {
-     return item.nome
- }).sort()
+]
+const pokes = pokemons.map((item, index, array) => {
+    return item.nome
+}).sort()
 //  console.log(pokes)
 
- //DESAFIO 02
+//DESAFIO 02
 
- 
+const allTypes = pokemons.map((item) => item.tipo)
+const typePokes = () => allTypes.filter((item, i) => allTypes.indexOf(item) === i)
+console.log(typePokes(typePokes))
+
+
