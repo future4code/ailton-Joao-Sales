@@ -76,11 +76,67 @@ let maior = 0
 let menor = 100000000000000000
 function maiorMenor(arr) {
     for (let i = 0; i < arr.length; i++) {
-        if (maior < arr[i]) { maior = arr[i]
+        if (maior < arr[i]) {
+            maior = arr[i]
         }
-        if (menor > arr[i]) { menor = arr[i]
+        if (menor > arr[i]) {
+            menor = arr[i]
         }
     }
     console.log(`O maior número é ${maior} e o menor é ${menor}`)
 }
 // maiorMenor(array)
+
+//DESAFIO 01
+
+function adivinhe() {
+    let escolhaNumero = +prompt('Qual numero voce pensou')
+    // let tenteAdivinhar = +prompt('chute um numero')
+    let quantidadeTentativas = []
+    console.log('Vamos jogar!')
+    for (let i = 0; i < escolhaNumero; i++) {
+        let tenteAdivinhar = +prompt('chute um numero')
+        if (escolhaNumero > tenteAdivinhar); {
+            quantidadeTentativas.push(tenteAdivinhar)
+            console.log(`O número chutado foi: ${tenteAdivinhar}
+            Errrrrrrou, é maior`)
+        }
+        if (escolhaNumero < tenteAdivinhar) {
+            quantidadeTentativas.push(tenteAdivinhar)
+            console.log(`O número chutado foi: ${tenteAdivinhar}
+            Errrrrrrou, é menor`)
+        }
+        if (escolhaNumero === tenteAdivinhar) {
+           return console.log(`O número chutado foi: ${tenteAdivinhar} acertou!`)
+        }
+    }
+    return quantidadeTentativas
+}
+// adivinhe()
+
+//DESAFIO 02
+
+function adivinhePc() {
+    let escolhaNumero = Math.floor((Math.random() * 10) + 1)
+    // let tenteAdivinhar = +prompt('chute um numero')
+    let quantidadeTentativas = []
+    console.log('Vamos jogar!')
+    for (let i = 0; i < escolhaNumero; i++) {
+        let tenteAdivinhar = +prompt('chute um numero')
+        if (escolhaNumero > tenteAdivinhar); {
+            quantidadeTentativas.push(tenteAdivinhar)
+            console.log(`O número chutado foi: ${tenteAdivinhar}
+            Errrrrrrou, é maior`)
+        }
+        if (escolhaNumero < tenteAdivinhar) {
+            quantidadeTentativas.push(tenteAdivinhar)
+            console.log(`O número chutado foi: ${tenteAdivinhar}
+            Errrrrrrou, é menor`)
+        }
+        if (escolhaNumero === tenteAdivinhar) {
+           return console.log(`O número chutado foi: ${tenteAdivinhar} acertou!`)
+        }
+    }
+    return quantidadeTentativas
+}
+// adivinhePc()
