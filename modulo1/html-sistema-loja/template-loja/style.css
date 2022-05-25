@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(204, 255, 255);
+}
+nav{
+    text-align: center;
+    background-color: crimson;
+    border-radius: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+a {
+    font-size:larger;
+    color: rgb(204, 255, 255);
+}
+p{
+    font-size: 40px;
+    text-align: center;
+}
+header{
+    text-align: center;
+    background-color: crimson;
+    border-radius: 20px;
+    color: rgb(204, 255, 255);
+}
+footer{
+    text-align: center;
+    background-color: crimson;
+    border-radius: 20px;
+    color: rgb(204, 255, 255) ;
+    po
+}
+#mario {
+    
+    max-width: 300px;
+    max-height: 300px;
+}
+main{
+    color:crimson;
+}
+#func{
+    text-align: center;
+    color: crimson;
+    font-size: 40px;
+}
+#func-list{
+    color: crimson;
+    font-size: 30px; 
+}
+table{
+    border-radius: 10px;
+    border: solid black;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: crimson;
+    color: rgb(204, 255, 255);
+}
+td{
+    border: solid black;
+}
+.cardapio{
+    text-align: center;
+    color:crimson;
+    font-size: 30px;
+}
