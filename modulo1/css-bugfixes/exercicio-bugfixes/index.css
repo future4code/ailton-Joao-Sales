@@ -8,6 +8,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: ;
+}
 
 h2 {
     background-color: #fe7e02;
@@ -44,6 +47,9 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    border: 0px;
+    margin: 50px;
+    
 }
 
 .botao-amarelo:hover {
@@ -53,6 +59,11 @@ div img {
 .container {
     height: 500px;
     text-align: center;
+}
+input{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 .icone {
@@ -107,6 +118,7 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: 0 auto;
 }
 
 td button {
@@ -115,6 +127,8 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    border: 0px;
+
 }
 td button:hover{
     color: white;
@@ -141,6 +155,7 @@ div img{
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    left: 40.02%;
 }
 
 #back-button:hover {
