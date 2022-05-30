@@ -1,33 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Inconsolata", sans-serif;
+}
+
+body {
     background-color: black;
 }
-li, a, button{
-    font-size: 16px;
-    color: aquamarine;
+
+li a,
+button {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(149, 160, 160);
+    text-decoration: none;
 }
 
-img{
-    height: 130px;
-
-    border-radius:50%;
+header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 45px;
+    padding: 30px 10%;
+    background-color: rgb(13, 16, 24);
 }
 
-#about-me{
+.logo {
+    cursor: pointer;
+    order: 3;
+    margin-left: auto;
+}
+nav {
+    order: 1;
+}
+
+.logo img:hover {
+    transition: all 0.2s ease 0s;
+}
+
+.nav_list {
+    list-style: none;
+}
+
+.nav_list li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_list li:nth-child(1) {
+    padding: 0px 20px 0 0;
+}
+
+.nav_list li a {
+    transition: all 0.2s ease 0s;
+}
+
+.nav_list li a:hover {
+    color: rgb(182, 0, 0)
+}
+
+.cta {
+    order: 2;
+}
+
+button {
+    margin-left: 20px;
+    background-color: black;
+    padding: 4px 15px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+}
+
+button:hover {
+    background-color: gray;
+    color: rgb(182, 0, 0);
+}
+
+.desc_img {
+    width: 250px;
     margin: 0 auto;
-    width: 500px;
+    padding: 40px;
+    border-radius: 50%;
+}
+
+main,
+h1 p {
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: rgb(149, 160, 160);
+    width: 75vw;
+}
+
+.inst_1 h1 h3 {
     text-align: center;
 }
-h3{
-    color: aquamarine;
+
+.logo_labenu {
+    height: 130px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 50%;
 }
-#about-me p{
-    background-color:aquamarine;
-    border-radius: 15px;
-    font-family:sans-serif;
-    font-size: small;
+
+
+
+
+
+
+
+
+
+.footer-container {
+    background-color: rgb(13, 16, 24);
+    padding: 4rem 0 4rem 0;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background-color: rgb(13, 16, 24);
+    color: rgb(149, 160, 160);
+}
+
+.footer-heading {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+}
+
+.footer-heading h2 {
+    margin-bottom: 1rem;
+}
+
+.footer-heading h2:hover {
+    color:rgb(199, 58, 7);
+    transition: 0.3s ease-out
+}
+
+.footer-heading a {
+    padding: 2px;
+    color: rgb(133, 165, 165);
+}
+
+
+.footer-heading a:hover {
+    color: rgb(182, 0, 0);
+    transition: 0.3s ease-out;
+}
+
+.port-main img{
+    height: 300px;
+}
+
+
+#fname{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: rgb(133, 165, 165);
+    font-size: 20px;
+}
+
+#fname::placeholder{
+    color: rgb(182, 0, 0);
+}
+
+
+#email {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    margin: 2rem;
+    padding: 10px;
+    background-color: rgb(133, 165, 165);
+    font-size: 20px;
+}
+
+#email::placeholder{
+    color: rgb(182, 0, 0);
+}
+
+#subject::placeholder{
+    color: rgb(182, 0, 0);
+}
+
+#subject {
+    width: 500px;
+    height: 80px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 10px;
+    background-color: rgb(133, 165, 165);
+    color: rgb(182, 0, 0);
+    font-size: 20px;
+}
+
+#submit {
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgb(182, 0, 0);
+    color: rgb(133, 165, 165);
+    font-size: 16px;
+    border: none;
+}
+
+#submit:hover{
+    background-color: rgb(13, 16, 24);
 }
