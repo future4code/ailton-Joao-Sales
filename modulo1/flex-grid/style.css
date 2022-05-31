@@ -14,9 +14,9 @@ header {
     display: flex;
     align-items: center;
     background-color: mediumvioletred;
-    padding: 0 12px;
+    padding: 2%;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 
 main {
@@ -32,7 +32,7 @@ main {
 }
 
 .card{
-    border: 1px solid grey;
+    box-shadow: 3px 2px darkgrey;
     display: flex;
     width: 302px;
     flex-direction: column;
@@ -40,17 +40,14 @@ main {
 }
 
 .lateral {
-    display: flex;
-    align-items: center;
     gap: 16px;
-    flex-direction: column;
     background-color: #f2d0e0 ;
+    width: 300px;
 }
 
 .lateral img{
     height: 15px;
 }
-
 
 .principal {
     display: flex;
@@ -59,26 +56,25 @@ main {
     flex-direction: row;
     gap: 10px;
 }
-.latpai {
+
+
+
+.area {
     display: flex;
-    gap:10px;
-    font-size: 20px;
+    justify-content: space-between ;
+    padding: 10px;
 }
-.logobar {
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    gap:5px;
-}
-.seta {
+.area-left {
     display: flex;
-    align-items: flex-end;
+}
+.area-left img{
+    margin-right: 5px;
 }
 
+
 footer{
-    height: 8vh;
     display: flex;
     justify-content: center;
     background-color:mediumvioletred ;
-    font-size: 30px;
+    font-size: 1.5rem;
 }
