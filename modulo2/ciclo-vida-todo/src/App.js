@@ -21,12 +21,12 @@ const InputsContainer = styled.div`
 class App extends React.Component {
   state = {
     tarefas: [{
-      id: Date.now(),
+      id: 1,
       texto: 'sffe',
       completa: false
     },
     {
-      id: Date.now(),
+      id: 2,
       texto: 'fsdfdsf',
       completa: true
     }
@@ -59,17 +59,18 @@ class App extends React.Component {
   criaTarefa = () => {
     const novaTarefa = [...this.state.tarefas];
     const novasTarefas = {
-      id: Date.now,
+      id: Date.now(),
       texto: this.state.inputValue,
       completa: false
     };
     novaTarefa.push(novasTarefas)
     this.setState({tarefas: novaTarefa})
+    this.setState({inputValue: ''})
   }
 
   selectTarefa = (id) => {
     const novaListaDeTarefas = this.state.tarefas.map((task) => {
-      if(id === task.id) {
+      if(task.id === id) {
         const newTask = {
           ...task,
           completa: !task.completa
