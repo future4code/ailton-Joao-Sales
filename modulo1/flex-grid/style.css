@@ -22,8 +22,7 @@ header {
 main {
     border: 1px solid black;
     display:flex;
-    flex-grow: 1;
-    
+    flex-grow: 1;    
 }
 
 .card img{
