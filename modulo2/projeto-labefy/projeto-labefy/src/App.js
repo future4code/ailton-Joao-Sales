@@ -9,7 +9,7 @@ const Container = styled.div`
 display: flex;
 height: 100vh;
 flex-direction: column;
-background-color: grey;
+background-color: darkgrey;
 `
 const MainCont = styled.div`
 display: flex;
@@ -27,7 +27,8 @@ export default class App extends Component {
     tracks: [],
     inputMusicName: "",
     inputArtistName: "",
-    InputURL: ""
+    InputURL: "",
+    playlistId: ""
   }
 
   componentDidMount() {
@@ -43,6 +44,22 @@ export default class App extends Component {
   onChangeInputPlaylist = (e) => {
     this.setState({ inputPlaylistName: e.target.value })
   }
+
+  onChangeMusicName = (e) => {
+    this.setState({ inputMusicName: e.target.value })
+  }
+  onChangeArtistName = (e) => {
+    this.setState({ inputArtistName: e.target.value })
+  }
+  onChangeURL = (e) => {
+    this.setState({ InputURL: e.target.value })
+  }
+
+  onChangeId = (id)=>{
+    this.setState({playlistId: id})
+  }
+
+  
 
   allPlaylists = () => {
     const url = ("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists")
@@ -60,7 +77,6 @@ export default class App extends Component {
     const body = {
       name: this.state.inputPlaylistName
     }
-
     axios.post(url, body, autorizado)
       .then((res) => {
         console.log('dshb', res.data)
@@ -81,9 +97,19 @@ export default class App extends Component {
     }
   }
 
-  addTrackToPlaylist = () => {
+  playlistsTracks = (playlistId) => {
+    const url = (`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}/tracks`)
+    axios.get(url, autorizado)
+      .then((res) => {
+        console.log('trachs', res.data)
+      }).catch((err) => {
+        console.log('err', err)
+      })
+  }
+
+  addTrackToPlaylist = (playlistId) => {
     //passar parametros a função
-    const url = (`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/ca64af11-8470-4b52-882d-c88998aca452/tracks`)
+    const url = (`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${playlistId}/tracks`)
     const body = {
       name: this.state.inputMusicName,
       artist: this.state.inputArtistName,
@@ -91,33 +117,47 @@ export default class App extends Component {
     }
     axios.post(url, body, autorizado)
       .then((res) => {
-        console.log('teste', res.data)
+        console.log('teste', res)
         this.allPlaylists()
+        
+        // this.playlistsTracks()
       }).catch((err) => {
         console.log(err.mensage)
+        console.log('dkjf',playlistId)
       })
   }
 
 
 
 
-render() {
-  return (
-    <Container>
-      <MainCont>
-        <BarraLateral
-          playlists={this.state.playlists}
-          inputPlaylistName={this.state.inputPlaylistName}
-          onChangeInputPlaylist={this.onChangeInputPlaylist}
-          createPlaylist={this.createPlaylist}
-          deletePlaylist={this.deletePlaylist}
-        />
-        <Center
-        { ...() => this.addTrackToPlaylist() }
-        />
-      </MainCont>
-      <TocaMusica />
-    </Container>
-  )
-}
+  render() {
+ 
+    return (
+      <Container>
+        <MainCont>
+          <BarraLateral
+            playlists={this.state.playlists}
+            inputPlaylistName={this.state.inputPlaylistName}
+            onChangeInputPlaylist={this.onChangeInputPlaylist}
+            createPlaylist={this.createPlaylist}
+            deletePlaylist={this.deletePlaylist}
+            onChangeId={this.onChangeId}
+          />
+          <Center
+            tracks={this.state.tracks}
+            inputMusicName={this.state.inputMusicName}
+            inputArtistName={this.state.inputArtistName}
+            InputURL={this.state.InputURL}
+            onChangeMusicName={this.onChangeMusicName}
+            onChangeArtistName={this.onChangeArtistName}
+            onChangeURL={this.onChangeURL}
+            addTrackToPlaylist={this.addTrackToPlaylist}
+            playlistId={this.state.playlistId}
+            playlistsTracks={this.playlistsTracks}
+          />
+        </MainCont>
+        <TocaMusica />
+      </Container>
+    )
+  }
 }

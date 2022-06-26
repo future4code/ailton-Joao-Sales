@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const ReprodutorMusica = styled.div`
 height: 15vh;
-background-color: green;
+background-color: grey;
 `
 
 export default class TocaMusica extends Component {
