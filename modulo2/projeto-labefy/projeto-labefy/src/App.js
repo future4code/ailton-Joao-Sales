@@ -7,14 +7,15 @@ import axios from 'axios'
 
 const Container = styled.div`
 display: flex;
-height: 100vh;
+max-height: 100vh;
 flex-direction: column;
 background-color: darkgrey;
+overflow: hidden;
 `
 const MainCont = styled.div`
 display: flex;
 flex-direction: row;
-height: 90vh;
+height: 95vh;
 width: 100%;
 `
 
@@ -28,18 +29,13 @@ export default class App extends Component {
     inputMusicName: "",
     inputArtistName: "",
     InputURL: "",
-    playlistId: ""
+    playlistId: "",
+    musicURL: ''
   }
 
   componentDidMount() {
     this.allPlaylists()
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if(prevState.playlists !== this.state.playlists) {
-  //     return () => this.allPlaylists()
-  //   }
-  // }
 
   onChangeInputPlaylist = (e) => {
     this.setState({ inputPlaylistName: e.target.value })
@@ -55,11 +51,14 @@ export default class App extends Component {
     this.setState({ InputURL: e.target.value })
   }
 
-  onChangeId = (id)=>{
-    this.setState({playlistId: id})
+  onChangeId = (id) => {
+    this.setState({ playlistId: id })
+    this.playlistsTracks(id)
   }
 
-  
+  callURL = (url) => {
+    this.setState({musicURL: url})
+  }
 
   allPlaylists = () => {
     const url = ("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists")
@@ -102,6 +101,7 @@ export default class App extends Component {
     axios.get(url, autorizado)
       .then((res) => {
         console.log('trachs', res.data)
+        this.setState({ tracks: res.data.result.tracks })
       }).catch((err) => {
         console.log('err', err)
       })
@@ -117,21 +117,16 @@ export default class App extends Component {
     }
     axios.post(url, body, autorizado)
       .then((res) => {
-        console.log('teste', res)
-        this.allPlaylists()
-        
-        // this.playlistsTracks()
+        // console.log('teste', res.data)
+        // this.allPlaylists()
+        this.playlistsTracks(playlistId)
       }).catch((err) => {
         console.log(err.mensage)
-        console.log('dkjf',playlistId)
+        console.log('dkjf', playlistId)
       })
   }
 
-
-
-
   render() {
- 
     return (
       <Container>
         <MainCont>
@@ -154,9 +149,12 @@ export default class App extends Component {
             addTrackToPlaylist={this.addTrackToPlaylist}
             playlistId={this.state.playlistId}
             playlistsTracks={this.playlistsTracks}
+            callURL={this.callURL}
           />
         </MainCont>
-        <TocaMusica />
+        <TocaMusica
+        musicURL={this.state.musicURL}
+        />
       </Container>
     )
   }
