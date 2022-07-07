@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Home from "./pages/Home/Home";
+import Matches from "./pages/Matches/Matches";
+import { Container } from "./styled";
+
 
 function App() {
-  return (
-    <div>
+  const [page, setPage] = useState('home')
 
-    </div>
+  return (
+    <Container>
+      {page === 'home' && <Home setPage={setPage} />}
+      {page === 'matches' && <Matches setPage={setPage}/>}
+    </Container>
   );
 }
 
