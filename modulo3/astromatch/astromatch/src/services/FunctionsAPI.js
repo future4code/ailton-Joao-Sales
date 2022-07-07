@@ -1,34 +1,33 @@
 import axios from 'axios'
 import { UrlAPI } from '../constants/Url'
 
-export const GetProfileToChoose = () => {
+export const GetProfileToChoose = (setProfile) => {
+    setProfile({})
     axios.get(UrlAPI + 'sales/person')
         .then(res => {
-            //incrementar estado pra buscar perfil
+            setProfile(res.data.profile)
         }).catch(err => {
             console.log(err)
         })
 }
-
-export const GetMatches = () => {
-    //retornar array de perfis que deram match
+export const GetMatches = (setListaMatches) => {
     axios.get(UrlAPI + 'sales/matches')
         .then(res => {
-            //incrementar estado de array com perfis com matches
+            setListaMatches(res.data.matches)
         }).catch(err => {
             console.log(err)
         })
 }
-
-export const ChoosePerson = () => {
+ 
+export const ChoosePerson = (id, choice, setProfile) => {
     const body = {
-        id: '', //setar id em state,
-        choice: true//setar escolha em state como booleano
+        id: id,
+        choice: choice
     }
-    axios.post(UrlAPI + 'sales/choose-person' + body)
-        .then(res => {
-            //incrementar estado pra escolha do match acontecer
-        }).catch(err => {
+    axios.post(UrlAPI + 'sales/choose-person', body)
+        .then(
+            GetProfileToChoose(setProfile)
+        ).catch(err => {
             console.log(err)
         })
 }

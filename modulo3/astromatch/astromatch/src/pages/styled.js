@@ -1,3 +1,4 @@
+import { Profiler } from "react";
 import styled from "styled-components";
 
 //estilização pagina home
@@ -45,9 +46,30 @@ border: 1px solid grey;
 `
 
 export const CardMain = styled.div`
-width: 350px;
-height: 490px;
+display: flex;
+align-items: flex-end;
+width: 380px;
+height: 522px;
 border: 1px solid grey;
+background-image: url(${(props) => props.photo});
+background-position: ${(props) => props.name === 'Joker' ? 'center top left' : 'center top '};
+background-size: cover;
+`
+export const ProfileText = styled.div`
+ display: flex;
+ flex-direction: column;
+ justify-content: end;
+ height: 100px;
+ width: 100%;
+ background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+h3{
+    margin-left: 10px;
+    margin-bottom: 4px;
+}
+h4{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
 `
 
 //estilização pagina home
@@ -56,10 +78,28 @@ border: 1px solid grey;
 
 export const MainMatch = styled.div`
 display: flex;
-justify-content: center;
-align-items: center;
 height:90%;
+width: 100%;
 border: 1px solid grey;
+overflow: auto;
+`
+
+export const CardsM = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 350px;
+margin: 5px 10px ;
+`
+
+export const Photo = styled.div`
+display: flex;
+height: 70px;
+width: 70px;
+background-image: url(${(props) => props.photo});
+background-position: ${(props) => props.name === 'Joker' ? 'center top left' : 'center top '};
+background-size: cover;
+border-radius: 50%; 
 `
 
 //estilização pagina Matches
