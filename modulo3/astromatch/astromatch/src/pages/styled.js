@@ -88,7 +88,7 @@ export const CardsM = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-width: 350px;
+width: 340px;
 margin: 5px 10px ;
 `
 

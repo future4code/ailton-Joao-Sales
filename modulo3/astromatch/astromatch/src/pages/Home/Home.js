@@ -7,27 +7,29 @@ import Heart from '../../assets/Heart.png'
 
 function Home(props) {
     const [profile, setProfile] = useState({})
-    // {profile? mostra informações : loading}
+    const [load, setLoad] = useState(true)
     useEffect(() => {
-        GetProfileToChoose(setProfile)
+        GetProfileToChoose(setProfile, setLoad)
     }, [])
-
-
     return (
         <ContainerHome>
             <HeaderHome>
                 <h1>AstroMatch</h1>
                 <img src={Heart} onClick={() => props.setPage('matches')} />
             </HeaderHome>
-            <MainHome>
-                <CardHome
-                    profile={profile}
-                />
-            </MainHome>
-            <ButtonsHome>
-                <button onClick={() => { ChoosePerson(profile.id, false, setProfile) }}>vai de base</button>
-                <button onClick={() => { ChoosePerson(profile.id, true, setProfile) }}>da pro gasto</button>
-            </ButtonsHome>
+            {load === false && <>
+                <MainHome>
+                    <CardHome
+                        profile={profile}
+                    />
+                </MainHome>
+
+                <ButtonsHome>
+                    <button onClick={() => { ChoosePerson(profile.id, false, setProfile, setLoad) }}>vai de base</button>
+                    <button onClick={() => { ChoosePerson(profile.id, true, setProfile, setLoad) }}>da pro gasto</button>
+                </ButtonsHome>
+            </>}
+            {load && <div>carregando...</div>}
         </ContainerHome>
     )
 }
