@@ -14,6 +14,7 @@ export default function Matches(props) {
   return (
     <ContainerHome>
       <HeaderHome>
+        <p>EU</p>
         <h1>AstroMatch</h1>
         <img src={Back} onClick={() => props.setPage('home')} />
       </HeaderHome>

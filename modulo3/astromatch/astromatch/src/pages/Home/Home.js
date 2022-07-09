@@ -14,6 +14,7 @@ function Home(props) {
     return (
         <ContainerHome>
             <HeaderHome>
+                <p>EU</p>
                 <h1>AstroMatch</h1>
                 <img src={Heart} onClick={() => props.setPage('matches')} />
             </HeaderHome>
