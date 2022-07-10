@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import CardHome from '../../components/CardHome';
-import { ButtonsHome, ContainerHome, HeaderHome, MainHome } from '../styled'
+import { ButtonsHome, ContainerHome, Deslike, HeaderHome, Like, MainHome } from '../styled'
 import { GetProfileToChoose, ChoosePerson } from '../../services/FunctionsAPI';
 import Heart from '../../assets/Heart.png'
+import X from '../../assets/X.png'
+
 
 
 function Home(props) {
@@ -14,7 +16,6 @@ function Home(props) {
     return (
         <ContainerHome>
             <HeaderHome>
-                <p>EU</p>
                 <h1>AstroMatch</h1>
                 <img src={Heart} onClick={() => props.setPage('matches')} />
             </HeaderHome>
@@ -26,11 +27,11 @@ function Home(props) {
                 </MainHome>
 
                 <ButtonsHome>
-                    <button onClick={() => { ChoosePerson(profile.id, false, setProfile, setLoad) }}>vai de base</button>
-                    <button onClick={() => { ChoosePerson(profile.id, true, setProfile, setLoad) }}>da pro gasto</button>
+                    <Deslike src={X} onClick={() => { ChoosePerson(profile.id, false, setProfile, setLoad) }}/>
+                    <Like src={Heart} onClick={() => { ChoosePerson(profile.id, true, setProfile, setLoad) }}/>
                 </ButtonsHome>
             </>}
-            {load && <div>carregando...</div>}
+            {load && <MainHome>carregando...</MainHome>}
         </ContainerHome>
     )
 }

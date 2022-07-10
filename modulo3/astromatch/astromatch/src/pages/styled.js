@@ -9,6 +9,8 @@ height: 670px;
 width: 380px;
 background-color: #1e1e1e;
 color: #dadee7;
+border: 1px solid grey;
+border-radius: 14px;
 `
 
 export const HeaderHome = styled.div`
@@ -17,7 +19,7 @@ justify-content: space-evenly;
 align-items: center;
 height: 10%;
 width: 100%;
-border: 1px solid grey;
+
 
 h1{
     color:#f0515f;
@@ -35,22 +37,22 @@ display: flex;
 justify-content: center;
 align-items: center;
 height:78%;
-border: 1px solid grey;
+
 `
 export const ButtonsHome = styled.div`
 display: flex;
 justify-content: space-around;
 align-items: center;
 height: 12%;
-border: 1px solid grey;
+
 `
 
 export const CardMain = styled.div`
 display: flex;
 align-items: flex-end;
-width: 380px;
+width: 378px;
 height: 522px;
-border: 1px solid grey;
+/* border: 1px solid grey; */
 background-image: url(${(props) => props.photo});
 background-position: ${(props) => props.name === 'Joker' ? 'center top left' : 'center top '};
 background-size: cover;
@@ -71,6 +73,30 @@ h4{
     margin-bottom: 10px;
 }
 `
+
+export const Deslike = styled.img`
+height: 50px;
+transition: 0.3s;
+:hover{
+height: 45px;
+}
+:active{
+transform: rotate(-30deg);
+transition: 0.3s;
+}
+`
+export const Like = styled.img`
+height: 50px;
+transition: 0.3s;
+:hover{
+height: 45px;
+}
+:active{
+transform: rotate(30deg);
+transition: 0.3s;
+}
+`
+
 
 //estilização pagina home
 
