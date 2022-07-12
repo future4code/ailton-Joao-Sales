@@ -34,7 +34,6 @@ background-color:#01f2f2;
 color: #43679d;
 font-size: 16px;
 border-radius: 8px;
-
 `
 export const ButtonA = styled.button`
 padding: 5px 8px;
