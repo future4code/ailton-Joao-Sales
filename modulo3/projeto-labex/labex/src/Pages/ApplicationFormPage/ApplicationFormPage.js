@@ -6,6 +6,11 @@ export const ApplicationFormPage = () => {
   const navigate = useNavigate()
   
   return (
-    <div>ApplicationFormPage</div>
+    <div>
+      <h1>Inscreva-se para uma viagem</h1>
+      <button>Voltar</button>
+      <button>Enviar</button>
+    </div>
+  
   )
 }

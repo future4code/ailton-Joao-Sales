@@ -11,7 +11,7 @@ export const HomePage = () => {
         <h1>LabeX</h1>
         <ButtonsDiv>
           <ButtonV onClick={() => goPage(navigate, 'Trips')}>Viagens</ButtonV>
-          <ButtonA onClick={() => goPage(navigate, 'Admin')}>Area Admin</ButtonA>
+          <ButtonA onClick={() => goPage(navigate, 'Login')}>Area Admin</ButtonA>
         </ButtonsDiv>
       </MainDiv>
     </ContainerHome>
