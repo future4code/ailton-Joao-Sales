@@ -1,3 +1,3 @@
-export const goPage = (navigate, page) =>{
+export const goPage = (navigate, page) => {
     navigate(`/${page}`)
 }
