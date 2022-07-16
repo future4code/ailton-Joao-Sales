@@ -9,6 +9,7 @@ export const TripDetailsPage = () => {
   const params = useParams()
   const [details, setDetails] = useState({})
 
+  
   useEffect(() => {
     const getTripDetails = async () => {
       const token = localStorage.getItem('token')
@@ -39,6 +40,22 @@ export const TripDetailsPage = () => {
       </div>
 
     <button  onClick={() => goPage(navigate, 'Admin/Trips/List')}>Voltar</button>
+
+    <div>
+      <h2>Candidatos Pendentes</h2>
+      <div>
+      {details.candidates?.map((item)=>{
+        return (
+          <p key={item.id}>{item.name}</p>
+        )
+      })}
+      </div>
+    </div>
+
+    <div>
+      <h2>Candidatos Aprovados</h2>
+    </div>
+
     </div>
   )
 }
