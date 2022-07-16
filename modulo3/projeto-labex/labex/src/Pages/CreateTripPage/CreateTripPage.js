@@ -4,64 +4,86 @@ import { useNavigate } from 'react-router-dom'
 import { Base_URL } from '../../Constants/Base_URL'
 import { goPage } from '../routes/Coordinator'
 import { DivForm } from './Styled'
+import { useForm } from '../../Hooks/UseForms'
 
 export const CreateTripPage = () => {
   const navigate = useNavigate()
-  const [name, setName] = useState('')
-  const [planet, setPlanet] = useState([])
-  const [date, setDate] = useState('')
-  const [description, setDescription] = useState('')
-  const [days, setDays] = useState('')
+  const { form, onChange } = useForm({
+    name: '',
+    planet: '',
+    date: '',
+    description: '',
+    durationInDays: ''
+  })
 
   const createTrip = async () => {
-    console.log('body', body)
+    console.log('body', form)
     const token = localStorage.getItem('token')
-    const body = {
-      name: name,
-      planet: planet,
-      date: date,
-      description: description,
-      durationInDays: days
-    }
+
     try {
-      const res = await axios.post(Base_URL + `trips/`, body, {
+      const res = await axios.post(Base_URL + `trips/`, form, {
         headers: {
           auth: token
         }
       })
       console.log('viagem criada', res.data)
+
     } catch (err) {
       console.log('deu ruim', err.response)
     }
+  }
+
+  const takeTrip = (e) => {
+    e.preventDefault()
+    createTrip()
+    console.log(form)
   }
 
   return (
     <div>
       <h1>CreateTripPage</h1>
       <div>
-        <DivForm>
+        <DivForm onSubmit={takeTrip}>
           <input
+            name={'name'}
             placeholder={'Nome'}
-            value={name}
+            value={form.name}
+            onChange={onChange}
+            required
           />
-          <select>
+          <select 
+          name={'planet'}
+          onChange={onChange}
+          required>
             <option>Teste</option>
+            <option>Teste1</option>
           </select>
           <input
+            type={'date'}
+            name={'date'}
             placeholder={'Data'}
-            value={date}
+            value={form.date}
+            onChange={onChange}
+            required
           />
           <input
+            name={'description'}
             placeholder={'Descrição'}
-            value={description}
+            value={form.description}
+            onChange={onChange}
+            required
           />
           <input
+            type={'number'}
+            name={"durationInDays"}
             placeholder={'Duração da viagem'}
-            value={days}
+            value={form.durationInDays}
+            onChange={onChange}
+            required
           />
           <button>Criar viagem</button>
         </DivForm>
-        <button>voltar</button>
+        <button  onClick={() => goPage(navigate, 'Admin/Trips/List')}>voltar</button>
       </div>
     </div>
   )
