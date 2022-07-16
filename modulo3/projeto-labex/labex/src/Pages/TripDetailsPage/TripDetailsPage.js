@@ -8,13 +8,14 @@ export const TripDetailsPage = () => {
   const navigate = useNavigate()
   const params = useParams()
   const [details, setDetails] = useState({})
+  const [update, setUpdate] = useState(0)
 
-  
+
   useEffect(() => {
     const getTripDetails = async () => {
       const token = localStorage.getItem('token')
       try {
-       const res = await axios.get(Base_URL + `trip/${params.id}`, {
+        const res = await axios.get(Base_URL + `trip/${params.id}`, {
           headers: {
             auth: token
           }
@@ -26,35 +27,70 @@ export const TripDetailsPage = () => {
       }
     }
     getTripDetails()
-  }, [])
+  }, [update])
+
+  const decideCandidate = async (boolean, candidateId) => {
+    const token = localStorage.getItem('token')
+    const body = {
+      approve: boolean
+    }
+    try {
+      const res = await axios.put(Base_URL + `trips/${details.id}/candidates/${candidateId}/decide`, body, {
+        headers: {
+          auth: token
+        }
+      })
+      console.log('candidato aprovado', res.data)
+      setUpdate(update + 1)
+    } catch (err) {
+      console.log('foi de base', err.response)
+    }
+  }
 
   return (
     <div>
       <h1>TripDetailsPage</h1>
       <div>
-      <p>{details.name}</p>
-      <p>{details.planet}</p>
-      <p>{details.description}</p>
-      <p>{details.durationInDays}</p>
-      <p>{details.date}</p>
+        <p>{details.name}</p>
+        <p>{details.planet}</p>
+        <p>{details.description}</p>
+        <p>{details.durationInDays}</p>
+        <p>{details.date}</p>
       </div>
 
-    <button  onClick={() => goPage(navigate, 'Admin/Trips/List')}>Voltar</button>
+      <button onClick={() => goPage(navigate, 'Admin/Trips/List')}>Voltar</button>
 
-    <div>
-      <h2>Candidatos Pendentes</h2>
       <div>
-      {details.candidates?.map((item)=>{
-        return (
-          <p key={item.id}>{item.name}</p>
-        )
-      })}
-      </div>
-    </div>
+        <h2>Candidatos Pendentes</h2>
+        <div>
+          {details.candidates?.map((item) => {
+            return (
+              <div key={item.id}>
+                <p >{item.name}</p>
+                <p >{item.applicationText}</p>
+                <p >{item.country}</p>
+                <p >{item.profession}</p>
+                <p >{item.age}</p>
+                <button onClick={() => decideCandidate(true, item.id)}>Aprovar</button>
+                <button onClick={() => decideCandidate(false, item.id)}>Reprovar</button>
+              </div>
+            )
+          })}
 
-    <div>
-      <h2>Candidatos Aprovados</h2>
-    </div>
+        </div>
+
+      </div>
+
+      <div>
+        <h2>Candidatos Aprovados</h2>
+        {details.approved?.map((item) => {
+          return (
+            <div key={item.id}>
+              <p >{item.name}</p>
+            </div>
+          )
+        })}
+      </div>
 
     </div>
   )
