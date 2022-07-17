@@ -60,7 +60,6 @@ export const ApplicationFormPage = () => {
         <DivForm onSubmit={makeApply}>
           <select
             defaultValue={form.trip}
-
             name={'trip'}
             onChange={onChange}
             required
@@ -101,7 +100,6 @@ export const ApplicationFormPage = () => {
           />
           <select
             defaultValue={form.country}
-       
             name={'country'}
             onChange={onChange}
             required

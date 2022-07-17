@@ -1,10 +1,11 @@
 import axios from 'axios'
-import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Base_URL } from '../../Constants/Base_URL'
 import { goPage } from '../routes/Coordinator'
-import { DivForm } from './Styled'
+import { CardForm, ContainerCreate, DivForm } from './Styled'
 import { useForm } from '../../Hooks/UseForms'
+import { useEffect } from 'react'
+import { ContainerHome } from '../HomePage/Styled'
 
 export const CreateTripPage = () => {
   const navigate = useNavigate()
@@ -16,10 +17,16 @@ export const CreateTripPage = () => {
     durationInDays: ''
   })
 
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      goPage(navigate, 'Login')
+    } 
+  }, [])
+ 
   const createTrip = async () => {
     console.log('body', form)
     const token = localStorage.getItem('token')
-
     try {
       const res = await axios.post(Base_URL + `trips/`, form, {
         headers: {
@@ -27,7 +34,6 @@ export const CreateTripPage = () => {
         }
       })
       console.log('viagem criada', res.data)
-
     } catch (err) {
       console.log('deu ruim', err.response)
     }
@@ -40,9 +46,9 @@ export const CreateTripPage = () => {
   }
 
   return (
-    <div>
-      <h1>CreateTripPage</h1>
-      <div>
+    <ContainerCreate>
+      <CardForm>
+      <h1>Criar Viagem</h1>
         <DivForm onSubmit={takeTrip}>
           <input
             name={'name'}
@@ -84,7 +90,7 @@ export const CreateTripPage = () => {
           <button>Criar viagem</button>
         </DivForm>
         <button  onClick={() => goPage(navigate, 'Admin/Trips/List')}>voltar</button>
-      </div>
-    </div>
+      </CardForm>
+    </ContainerCreate>
   )
 }

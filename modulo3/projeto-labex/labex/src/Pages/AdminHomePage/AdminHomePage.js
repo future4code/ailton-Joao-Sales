@@ -7,6 +7,14 @@ import { goPage } from '../routes/Coordinator'
 export const AdminHomePage = () => {
   const navigate = useNavigate()
   const [trips, setTrips] = useState([])
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      goPage(navigate, 'Login')
+    } 
+  }, [])
+
   useEffect(() => {
     const getTrips = async () => {
       try {
@@ -37,7 +45,7 @@ export const AdminHomePage = () => {
   return (
     <div>
       <h1>Painel Administrativo</h1>
-      <button onClick={() => goPage(navigate, 'Login')}>Voltar</button>
+      <button onClick={() => goPage(navigate, '')}>Voltar</button>
       <button onClick={() => goPage(navigate, 'Admin/Trips/Create')}>Criar Viagem</button>
       <button onClick={() => {
         goPage(navigate, 'Login')

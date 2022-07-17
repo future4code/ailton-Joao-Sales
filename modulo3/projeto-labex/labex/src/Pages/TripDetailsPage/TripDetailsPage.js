@@ -10,6 +10,12 @@ export const TripDetailsPage = () => {
   const [details, setDetails] = useState({})
   const [update, setUpdate] = useState(0)
 
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      goPage(navigate, 'Login')
+    } 
+  }, [])
 
   useEffect(() => {
     const getTripDetails = async () => {
