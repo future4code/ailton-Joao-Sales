@@ -57,13 +57,13 @@ export const CreateTripPage = () => {
             onChange={onChange}
             required
           />
-          <select 
+          <input 
           name={'planet'}
           onChange={onChange}
-          required>
-            <option>Teste</option>
-            <option>Teste1</option>
-          </select>
+          placeholder={'Planeta'}
+          value={form.planet}
+          required
+           />
           <input
             type={'date'}
             name={'date'}

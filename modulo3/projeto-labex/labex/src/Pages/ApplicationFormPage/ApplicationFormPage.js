@@ -2,10 +2,11 @@ import { listCountries } from '../../Constants/Countries'
 import { useNavigate } from 'react-router-dom'
 import { goPage } from '../routes/Coordinator'
 import { useForm } from '../../Hooks/UseForms'
-import { DivForm } from '../CreateTripPage/Styled'
+import { CardForm, ContainerCreate, DivForm } from '../CreateTripPage/Styled'
 import axios from 'axios'
 import { Base_URL } from '../../Constants/Base_URL'
 import { useEffect, useState } from 'react'
+import { CardFormApp, DivFormApp } from './Styled'
 
 export const ApplicationFormPage = () => {
   const navigate = useNavigate()
@@ -54,10 +55,11 @@ export const ApplicationFormPage = () => {
   }
 
   return (
-    <div>
+    <ContainerCreate>
+    
+      <CardFormApp>
       <h1>Inscreva-se para uma viagem</h1>
-      <div>
-        <DivForm onSubmit={makeApply}>
+        <DivFormApp onSubmit={makeApply}>
           <select
             defaultValue={form.trip}
             name={'trip'}
@@ -116,11 +118,10 @@ export const ApplicationFormPage = () => {
             })}
           </select>
           <button>Enviar</button>
-        </DivForm>
-      </div>
+        </DivFormApp>
+      </CardFormApp>
       <button>Enviar</button>
       <button>Voltar</button>
-    </div>
-
+    </ContainerCreate>
   )
 }
