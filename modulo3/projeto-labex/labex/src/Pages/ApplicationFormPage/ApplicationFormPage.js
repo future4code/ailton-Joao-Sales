@@ -7,6 +7,7 @@ import axios from 'axios'
 import { Base_URL } from '../../Constants/Base_URL'
 import { useEffect, useState } from 'react'
 import { CardFormApp, DivFormApp } from './Styled'
+import { ButtonA } from '../HomePage/Styled'
 
 export const ApplicationFormPage = () => {
   const navigate = useNavigate()
@@ -117,11 +118,10 @@ export const ApplicationFormPage = () => {
               )
             })}
           </select>
-          <button>Enviar</button>
+          <ButtonA>Enviar</ButtonA>
         </DivFormApp>
+        <ButtonA onClick={() => goPage(navigate, 'Trips')}>Voltar</ButtonA>
       </CardFormApp>
-      <button>Enviar</button>
-      <button>Voltar</button>
     </ContainerCreate>
   )
 }

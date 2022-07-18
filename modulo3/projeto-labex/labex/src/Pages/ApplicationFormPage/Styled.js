@@ -25,6 +25,7 @@ align-items: center;
 width: 90%;
 height: 80%;
 
+
 //fazer alterações
 input{
     height: 30px;
@@ -33,6 +34,7 @@ input{
     margin: 1.5px 1px;
     border: none;
     border-radius: 8px;
+    color:rgba(177, 200, 216, 0.94);
     background-color: rgba(18, 27, 33, 0.86);
     ::placeholder{
         color:rgba(177, 200, 216, 0.94);
