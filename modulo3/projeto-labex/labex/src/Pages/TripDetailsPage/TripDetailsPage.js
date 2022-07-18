@@ -2,6 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Base_URL } from '../../Constants/Base_URL'
+import { ButtonA } from '../HomePage/Styled'
+import { ContainerTripList, Header, MainD } from '../ListTripPage/Styled'
+import { DivButton } from '../LoginPage/Styled'
 import { goPage } from '../routes/Coordinator'
 
 export const TripDetailsPage = () => {
@@ -14,7 +17,7 @@ export const TripDetailsPage = () => {
     const token = localStorage.getItem('token')
     if (!token) {
       goPage(navigate, 'Login')
-    } 
+    }
   }, [])
 
   useEffect(() => {
@@ -54,50 +57,57 @@ export const TripDetailsPage = () => {
   }
 
   return (
-    <div>
-      <h1>TripDetailsPage</h1>
-      <div>
-        <p>{details.name}</p>
-        <p>{details.planet}</p>
-        <p>{details.description}</p>
-        <p>{details.durationInDays}</p>
-        <p>{details.date}</p>
-      </div>
 
-      <button onClick={() => goPage(navigate, 'Admin/Trips/List')}>Voltar</button>
-
-      <div>
-        <h2>Candidatos Pendentes</h2>
+    <ContainerTripList>
+      <Header>
+        <h1>Detalhes da viagem</h1>
+        <DivButton>
+        <ButtonA onClick={() => goPage(navigate, 'Admin/Trips/List')}>Voltar</ButtonA>
+        </DivButton>
+      </Header>
+      <MainD>
         <div>
-          {details.candidates?.map((item) => {
-            return (
-              <div key={item.id}>
-                <p >{item.name}</p>
-                <p >{item.applicationText}</p>
-                <p >{item.country}</p>
-                <p >{item.profession}</p>
-                <p >{item.age}</p>
-                <button onClick={() => decideCandidate(true, item.id)}>Aprovar</button>
-                <button onClick={() => decideCandidate(false, item.id)}>Reprovar</button>
-              </div>
-            )
-          })}
+          <p>{details.name}</p>
+          <p>{details.planet}</p>
+          <p>{details.description}</p>
+          <p>{details.durationInDays}</p>
+          <p>{details.date}</p>
+        </div>
+
+
+
+        <div>
+          <h2>Candidatos Pendentes</h2>
+          <div>
+            {details.candidates?.map((item) => {
+              return (
+                <div key={item.id}>
+                  <p >{item.name}</p>
+                  <p >{item.applicationText}</p>
+                  <p >{item.country}</p>
+                  <p >{item.profession}</p>
+                  <p >{item.age}</p>
+                  <button onClick={() => decideCandidate(true, item.id)}>Aprovar</button>
+                  <button onClick={() => decideCandidate(false, item.id)}>Reprovar</button>
+                </div>
+              )
+            })}
+
+          </div>
 
         </div>
 
-      </div>
-
-      <div>
-        <h2>Candidatos Aprovados</h2>
-        {details.approved?.map((item) => {
-          return (
-            <div key={item.id}>
-              <p >{item.name}</p>
-            </div>
-          )
-        })}
-      </div>
-
-    </div>
+        <div>
+          <h2>Candidatos Aprovados</h2>
+          {details.approved?.map((item) => {
+            return (
+              <div key={item.id}>
+                <p >{item.name}</p>
+              </div>
+            )
+          })}
+        </div>
+      </MainD>
+    </ContainerTripList>
   )
 }

@@ -36,9 +36,11 @@ border-radius: 8px;
 export const MainD = styled.div`
 display: flex;
 justify-content: center;
+flex-direction: column;
 flex-wrap: wrap;
 height: 90vh;
 width: 100%;
+color: white;
 `
 
 export const CardTrip = styled.div`

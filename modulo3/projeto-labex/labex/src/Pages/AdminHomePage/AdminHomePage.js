@@ -67,8 +67,8 @@ export const AdminHomePage = () => {
             >
               <p>{item.name}</p>
               <DivButton>
-              <ButtonA onClick={() => goPage(navigate, `Admin/Trips/${item.id}`)}>details</ButtonA>
-              <ButtonA onClick={() => deleteTrip(item.id)}>Remover Viagem</ButtonA>
+              <ButtonA onClick={() => goPage(navigate, `Admin/Trips/${item.id}`)}>Detalhes</ButtonA>
+              <ButtonA onClick={() => deleteTrip(item.id)}>Remover</ButtonA>
               </DivButton>
             </CardAdm>
           )
