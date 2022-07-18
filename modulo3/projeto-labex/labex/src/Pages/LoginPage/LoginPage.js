@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { goPage } from '../routes/Coordinator'
 import { Base_URL } from '../../Constants/Base_URL'
 import axios from 'axios'
+import { CardLogin, ContainerLogin, DivButton } from './Styled'
+import { ButtonA } from '../HomePage/Styled'
 
 export const LoginPage = () => {
   const navigate = useNavigate()
@@ -41,9 +43,10 @@ export const LoginPage = () => {
   }
 
   return (
-    <div>
+    <ContainerLogin>
+      
+      <CardLogin>
       <h1>Login</h1>
-      <div>
         <input
           placeholder={'email'}
           type={'email'}
@@ -56,9 +59,11 @@ export const LoginPage = () => {
           value={password}
           onChange={onChangePassword}
         />
-        <button onClick={() => onSubmitLogin()}>Entrar</button>
-        <button onClick={() => goPage(navigate, '')}>Voltar</button>
-      </div>
-    </div>
+        <DivButton>
+        <ButtonA onClick={() => goPage(navigate, '')}>Voltar</ButtonA>
+        <ButtonA onClick={() => onSubmitLogin()}>Entrar</ButtonA>
+        </DivButton>
+      </CardLogin>
+    </ContainerLogin>
   )
 }

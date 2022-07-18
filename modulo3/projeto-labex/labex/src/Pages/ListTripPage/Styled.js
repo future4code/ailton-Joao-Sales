@@ -20,6 +20,7 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 height: 10vh;
+width: 100vw;
 h1{
     color: white;
 }

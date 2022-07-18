@@ -2,7 +2,11 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Base_URL } from '../../Constants/Base_URL'
+import { ButtonA } from '../HomePage/Styled'
+import { CardTrip, ContainerTripList, Header, MainD } from '../ListTripPage/Styled'
+import { DivButton } from '../LoginPage/Styled'
 import { goPage } from '../routes/Coordinator'
+import { ButtonsAdm, CardAdm } from './Styled'
 
 export const AdminHomePage = () => {
   const navigate = useNavigate()
@@ -43,27 +47,33 @@ export const AdminHomePage = () => {
   }
 
   return (
-    <div>
+    <ContainerTripList>
+      <Header>
       <h1>Painel Administrativo</h1>
-      <button onClick={() => goPage(navigate, '')}>Voltar</button>
-      <button onClick={() => goPage(navigate, 'Admin/Trips/Create')}>Criar Viagem</button>
-      <button onClick={() => {
+      <ButtonsAdm>
+      <ButtonA onClick={() => goPage(navigate, '')}>Voltar</ButtonA>
+      <ButtonA onClick={() => goPage(navigate, 'Admin/Trips/Create')}>Criar Viagem</ButtonA>
+      <ButtonA onClick={() => {
         goPage(navigate, 'Login')
         window.localStorage.setItem('token', '')
-      }}>Logout</button>
-      <div>
+      }}>Logout</ButtonA>
+      </ButtonsAdm>
+      </Header>
+      <MainD>
         {trips?.map((item) => {
           return (
-            <div
+            <CardAdm
               key={item.id}
             >
               <p>{item.name}</p>
-              <button onClick={() => goPage(navigate, `Admin/Trips/${item.id}`)}>details</button>
-              <button onClick={() => deleteTrip(item.id)}>Remover Viagem</button>
-            </div>
+              <DivButton>
+              <ButtonA onClick={() => goPage(navigate, `Admin/Trips/${item.id}`)}>details</ButtonA>
+              <ButtonA onClick={() => deleteTrip(item.id)}>Remover Viagem</ButtonA>
+              </DivButton>
+            </CardAdm>
           )
         })}
-      </div>
-    </div>
+      </MainD>
+    </ContainerTripList>
   )
 }
