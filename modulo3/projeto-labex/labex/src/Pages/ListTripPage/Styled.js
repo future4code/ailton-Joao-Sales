@@ -15,9 +15,29 @@ overflow: auto;
 `
  
 export const Header = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 10vh;
 h1{
     color: white;
 }
+button{
+    padding: 5px 8px;
+background-color:#01f2f2;
+color: #43679d;
+font-size: 16px;
+border-radius: 8px;
+}
+`
+  
+export const MainD = styled.div`
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+height: 90vh;
+width: 100%;
 `
 
 export const CardTrip = styled.div`

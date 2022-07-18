@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { goPage } from '../routes/Coordinator'
 import axios from 'axios'
 import { Base_URL } from '../../Constants/Base_URL'
-import { CardTrip, ContainerTripList, Header, PCard } from './Styled'
+import { CardTrip, ContainerTripList, Header, MainD, PCard } from './Styled'
 
 export const ListTripsPage = () => {
   const navigate = useNavigate()
@@ -28,7 +28,7 @@ export const ListTripsPage = () => {
       <h1>Lista de viagens</h1>
       <button onClick={() => goPage(navigate, 'Trips/Application')}>Aplique pra uma viagem</button>
       </Header>
-      <div>
+      <MainD>
         {trips?.map((item) => {
           return (
             <CardTrip key={item.id}>
@@ -40,7 +40,7 @@ export const ListTripsPage = () => {
             </CardTrip>
           )
         })}
-      </div>
+      </MainD>
     </ContainerTripList>
   )
 }
