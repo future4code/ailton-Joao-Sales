@@ -14,6 +14,7 @@ export const LogoDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+margin-top: 130px;
 `;
 
 export const ImgDiv = styled.div`
@@ -26,8 +27,8 @@ export const ImgDiv = styled.div`
 `;
 
 export const ImgLogo1 = styled.div`
-  height: 41.99px;
-  width: 41.99px;
+  height: 42px;
+  width: 42px;
   background: #fe7e02;
   border-radius: 100px 0 0 0;
 `;
@@ -42,3 +43,8 @@ export const ImgLogo3 = styled(ImgLogo1)`
 export const ImgLogo4 = styled(ImgLogo3)`
   background: #a8bbc6;
 `;
+
+export const LoginForm = styled.form`
+display: flex;
+flex-direction: column;
+`

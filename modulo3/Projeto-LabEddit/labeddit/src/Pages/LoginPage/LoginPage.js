@@ -6,6 +6,7 @@ import {
   ImgLogo3,
   ImgLogo4,
   LoginContainer,
+  LoginForm,
   LogoDiv,
   TextImgDiv,
 } from "./styled";
@@ -25,6 +26,10 @@ export const LoginPage = () => {
       </LogoDiv>
       <p>O projeto de rede social da Labenu</p>
       </div>
+      <LoginForm>
+        <input/>
+        <input/>
+      </LoginForm>
     </LoginContainer>
   );
 };
