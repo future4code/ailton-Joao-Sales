@@ -9,7 +9,7 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<LoginPage/>} />
+        <Route index element={<RegisterPage/>} />
         <Route path="" element={""} />
         <Route path="" element={""} />
         <Route path="" element={""} />

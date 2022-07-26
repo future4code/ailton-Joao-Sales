@@ -1,7 +1,13 @@
 import React from 'react'
+import { Header } from '../../Components/Header/Header'
 
 export const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <div>
+      <Header/>
+      <div>
+
+      </div>
+    </div>
   )
 }
