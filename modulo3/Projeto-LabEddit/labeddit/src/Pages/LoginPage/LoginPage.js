@@ -1,20 +1,25 @@
 import React from "react";
+import { DivGhost } from "../../StyledGhost";
 import {
+  ButtonReverse,
+  ButtonStyled,
+  Description,
+  DivLine,
+  FormSyled,
   ImgDiv,
   ImgLogo1,
   ImgLogo2,
   ImgLogo3,
   ImgLogo4,
+  InputStyled,
   LoginContainer,
-  LoginForm,
   LogoDiv,
-  TextImgDiv,
+  Title,
 } from "./styled";
 
 export const LoginPage = () => {
   return (
     <LoginContainer>
-      <div>
       <LogoDiv>
         <ImgDiv>
           <ImgLogo1 />
@@ -22,14 +27,17 @@ export const LoginPage = () => {
           <ImgLogo3 />
           <ImgLogo4 />
         </ImgDiv>
-        <h1>LabEddit</h1>
+        <Title>LabEddit</Title>
+        <Description>O projeto de rede social da Labenu</Description>
       </LogoDiv>
-      <p>O projeto de rede social da Labenu</p>
-      </div>
-      <LoginForm>
-        <input/>
-        <input/>
-      </LoginForm>
+      <FormSyled>
+        <InputStyled placeholder="Nome" />
+        <InputStyled placeholder="Senha" type={"password"} />
+        <DivGhost></DivGhost>
+        <ButtonStyled>Continuar</ButtonStyled>
+      </FormSyled>
+      <DivLine/>
+      <ButtonReverse>Crie uma conta!</ButtonReverse>
     </LoginContainer>
   );
 };
