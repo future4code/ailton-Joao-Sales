@@ -1,7 +1,12 @@
 import React from "react";
 import { Header } from "../../Components/Header/Header";
 import { Div65 } from "../../StyledGhost";
-import { ButtonStyled, FormSyled, InputStyled, LoginContainer } from "../LoginPage/styled";
+import {
+  ButtonStyled,
+  FormSyled,
+  InputStyled,
+  LoginContainer,
+} from "../LoginPage/styled";
 import { BlueP, DivCBox, InputC, RegisterP, TitleR } from "./styled";
 
 export const RegisterPage = () => {
@@ -16,9 +21,9 @@ export const RegisterPage = () => {
           <InputStyled placeholder="Senha" type={"password"} />
           <Div65 />
           <RegisterP>
-            Ao continuar, você concorda com o nosso{" "}
-            <BlueP>Contrato de usuário</BlueP> e nossa{" "}
-            <BlueP>Política de Privacidade</BlueP>
+            Ao continuar, você concorda com o nosso
+            <BlueP> Contrato de usuário</BlueP> e nossa
+            <BlueP> Política de Privacidade</BlueP>
           </RegisterP>
           <DivCBox>
             <InputC type="checkbox" />
