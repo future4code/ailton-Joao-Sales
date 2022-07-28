@@ -1,9 +1,11 @@
 import React, { Children } from 'react'
-import { GlobalContext } from './GlobalContext'
+import { createContext } from "react";
 
 
 export const GlobalState = () => {
+    const GlobalContext = createContext()
     const Provider = GlobalContext.Provider
+
     const values = {
 
     }
