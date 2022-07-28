@@ -3,8 +3,10 @@ import { CardPost } from "../../Components/CardPost/CardPost";
 import { Header } from "../../Components/Header/Header";
 import { LoginContainer } from "../LoginPage/styled";
 import { DivFeed, DivLine2, FormPost, InputPost, PostButton, TitleInput } from "./styled";
+import { useNavigate } from 'react-router-dom'
 
 export const FeedPage = () => {
+  const navigate = useNavigate()
   return (
     <div>
       <Header />

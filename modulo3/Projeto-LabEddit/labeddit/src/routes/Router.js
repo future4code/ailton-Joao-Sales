@@ -9,8 +9,8 @@ export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<FeedPage />} />
-        <Route path="" element={""} />
+        <Route index element={<LoginPage />} />
+        <Route path="/createaccount" element={<RegisterPage/>} />
         <Route path="" element={""} />
         <Route path="" element={""} />
         <Route path="" element={""} />

@@ -8,17 +8,30 @@ import {
   LoginContainer,
 } from "../LoginPage/styled";
 import { BlueP, DivCBox, InputC, RegisterP, TitleR } from "./styled";
+import { useNavigate } from "react-router-dom";
+import { UseForm } from '../../hooks/UseForm'
 
 export const RegisterPage = () => {
+  const navigate = useNavigate();
+  const { form, onChange } = UseForm({
+    email: '',
+    password: ''
+  }) 
+
   return (
     <div>
       <Header />
       <LoginContainer>
         <TitleR>Olá, boas vindas ao LabEddit ;)</TitleR>
         <FormSyled>
-          <InputStyled placeholder="Nome do usuario" />
-          <InputStyled placeholder="E-mail" type={"email"} />
-          <InputStyled placeholder="Senha" type={"password"} />
+          <InputStyled
+            placeholder="Nome do usuario" />
+          <InputStyled
+            placeholder="E-mail"
+            type={"email"} />
+          <InputStyled
+            placeholder="Senha"
+            type={"password"} />
           <Div65 />
           <RegisterP>
             Ao continuar, você concorda com o nosso
