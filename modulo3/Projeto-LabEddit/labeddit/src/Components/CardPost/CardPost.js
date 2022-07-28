@@ -1,13 +1,17 @@
 import React from "react";
-import { CardContainer } from "./styled";
+import { CardContainer, ContenP, SendByUserP } from "./styled";
 
 export const CardPost = () => {
   return (
     <CardContainer>
-      <div>Enviado por: labaluno83</div>
       <div>
-        Porque a maioria dos desenvolvedores usam Linux? ou as empresas de
-        tecnologia usam Linux ?
+        <SendByUserP>Enviado por: labaluno83</SendByUserP>
+      </div>
+      <div>
+        <ContenP>
+          Porque a maioria dos desenvolvedores usam Linux? ou as empresas de
+          tecnologia usam Linux ?
+        </ContenP>
       </div>
       <div></div>
     </CardContainer>

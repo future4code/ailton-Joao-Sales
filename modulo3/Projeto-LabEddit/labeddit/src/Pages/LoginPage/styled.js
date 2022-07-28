@@ -71,7 +71,6 @@ export const InputStyled = styled.input`
   height: 60px;
   padding-left: 16px;
   font-family: "Noto Sans";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -79,7 +78,6 @@ export const InputStyled = styled.input`
   ::placeholder {
     padding-left: 16px;
     font-family: "Noto Sans";
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
