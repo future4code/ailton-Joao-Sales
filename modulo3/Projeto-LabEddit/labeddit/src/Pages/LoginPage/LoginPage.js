@@ -30,7 +30,7 @@ export const LoginPage = () => {
 
   const submitLogin = (e) => {
     e.preventDefault()
-    Login(form)
+    Login(form, navigate)
     console.log(form)
   }
 

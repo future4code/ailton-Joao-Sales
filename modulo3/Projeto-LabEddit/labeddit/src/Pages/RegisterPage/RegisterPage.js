@@ -22,7 +22,7 @@ export const RegisterPage = () => {
 
   const submitRegister = (e) => {
     e.preventDefault()
-    Signup(form)
+    Signup(form, navigate)
     console.log(form)
   }
 
