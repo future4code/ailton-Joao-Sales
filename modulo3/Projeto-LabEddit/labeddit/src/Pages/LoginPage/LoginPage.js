@@ -55,7 +55,7 @@ export const LoginPage = () => {
           value={form.email}
         />
         <InputStyled
-        name={'password'}
+          name={'password'}
           placeholder="Senha"
           onChange={onChange}
           value={form.password}
@@ -64,7 +64,7 @@ export const LoginPage = () => {
         <ButtonStyled>Continuar</ButtonStyled>
       </FormSyled>
       <DivLine />
-      <ButtonReverse onClick={()=>goToPage(navigate, '/createaccount')}>Crie uma conta!</ButtonReverse>
+      <ButtonReverse onClick={() => goToPage(navigate, '/createaccount')}>Crie uma conta!</ButtonReverse>
     </LoginContainer>
   );
 };

@@ -2,9 +2,6 @@ import axios from "axios";
 import { BaseURL } from '../Constants/BaseURL'
 import { goToPage } from "../routes/Coordinator";
 
-
-
-
 export const Login = (form, navigate) => {
     console.log('req', form)
     axios.post(BaseURL + 'users/login', form)
@@ -44,4 +41,23 @@ export const GetPosts = async (setPost) => {
         console.log('não foi possivel renderizar a lista', err.response)
     }
 }
+
+// export const GetPostComments = async () => {
+
+// }
+
+export const CreatePost = async (form) => {
+    const token = localStorage.getItem('token')
+    try {
+        const res = await axios.post(BaseURL + 'posts', form, {
+            headers: {
+                authorization: token
+            }
+        })
+        console.log('post criado', res.data)
+    } catch (err) {
+        console.log('não foi possivel criar o post', err.response)
+    }
+}
+
 

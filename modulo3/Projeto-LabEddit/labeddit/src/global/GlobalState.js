@@ -9,7 +9,6 @@ export const GlobalState = (props) => {
     const Provider = GlobalContext.Provider
     const [pagination, setPagination] = useState(0)
     const [post, setPost] = useState([])
-    const token = localStorage.getItem('token')
 
     useEffect(() => {
         GetPosts(setPost)

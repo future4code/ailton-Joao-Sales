@@ -4,34 +4,44 @@ import { Header } from "../../Components/Header/Header";
 import { LoginContainer } from "../LoginPage/styled";
 import { DivFeed, DivLine2, FormPost, InputPost, PostButton, TitleInput } from "./styled";
 import { useNavigate } from 'react-router-dom'
-import { GetPosts } from '../../Services/RequestsAPI'
+import { UseForm } from "../../hooks/UseForm";
+import { CreatePost } from "../../Services/RequestsAPI";
 
 export const FeedPage = () => {
   const navigate = useNavigate()
+  const {form, onChange} = UseForm({
+    title:'',
+    body:''
+  })
 
 
-  // useEffect(() => {
-  //   GetPosts(setPost)
-  //   console.log('feed',post)
-  // }, [])
+  const submitPost = (e) =>{
+    e.preventDefault()
+    CreatePost(form)
+    console.log(form)
+  }
   
   return (
     <div>
       <Header />
       <LoginContainer>
-        <FormPost>
-          <TitleInput placeholder="Titulo do post" />
-          <InputPost placeholder="Escreva seu post..." />
+        <FormPost onSubmit={submitPost}>
+          <TitleInput
+           placeholder="Titulo do post" 
+           name='title'
+           onChange={onChange}
+           value={form.title}
+           />
+          <InputPost 
+          placeholder="Escreva seu post..."
+          name='body'
+          onChange={onChange}
+          value={form.body}
+          />
           <PostButton>Postar</PostButton>
         </FormPost>
         <DivLine2 />
         <DivFeed>
-          <CardPost />
-          <CardPost />
-          <CardPost />
-          <CardPost />
-          <CardPost />
-          <CardPost />
           <CardPost />
         </DivFeed>
       </LoginContainer>
