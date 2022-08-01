@@ -3,9 +3,9 @@ import { createContext } from "react";
 import { GetPosts } from '../Services/RequestsAPI';
 
 
+export const GlobalContext = createContext()
 
 export const GlobalState = (props) => {
-    const GlobalContext = createContext()
     const Provider = GlobalContext.Provider
     const [pagination, setPagination] = useState(0)
     const [post, setPost] = useState([])
@@ -16,7 +16,8 @@ export const GlobalState = (props) => {
 
 
     const values = {
-        post
+        post,
+        setPost
     }
     return (
         <Provider value={values}>{props.children}</Provider>

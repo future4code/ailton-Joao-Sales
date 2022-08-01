@@ -113,3 +113,31 @@ export const ChangeCommentVote = (id) => {
 
     }
 }
+
+export const DeletePostVote = (id) => {
+    const token = localStorage.getItem('token')
+    try {
+        const res = axios.delete(BaseURL + `posts/${id}/votes`, {
+            headers: {
+                authorization: token
+            }
+        })
+        console.log('voto deletado', res.data)
+    } catch (err) {
+        console.log('erro', err.response)
+    }
+}
+
+export const DeleteCommentVote = (id) => {
+    const token = localStorage.getItem('token')
+    try {
+        const res = axios.delete(BaseURL + `comments/${id}/votes`, {
+            headers: {
+                authorization: token
+            }
+        })
+        console.log('voto do comentario deletado', res.data)
+    } catch (err) {
+        console.log('erro', err.response)
+    }
+}
