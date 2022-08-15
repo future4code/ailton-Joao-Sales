@@ -1,0 +1,16 @@
+{
+  "name": "Aprofundamento-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index.js",
+    "exercicio4": "tsc && node ./build/exercicio4.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.4.4"
+  }
+}
