@@ -1,8 +1,8 @@
 -- exercicio aprofundamento sql
 SET SQL_SAFE_UPDATES = 0;
 
+### exercicio 01
 ```
-###exercicio 01
 -- a) apaga a coluna
 -- b) troca as propriedades de gender para sex
 -- c) vai alterar a quantidade de caracteres que o varchar do gender aceita pra 255
@@ -10,8 +10,8 @@ SET SQL_SAFE_UPDATES = 0;
 ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
 ```
 
+### exericio 02
 ```
-###exericio 02
 -- a)
 UPDATE Actor
 SET name = "Fernanda Franco",
@@ -42,8 +42,8 @@ WHERE id = "1000";
 -- porem, nada mudou, pois não existia nenhum dado com o id 1000
 ```
 
+### exercicio 03
 ```
-###exercicio 03
 -- a)
 DELETE FROM Actor WHERE name = "Fernanda Franco";
 -- b)
@@ -51,9 +51,9 @@ DELETE FROM Actor
  WHERE gender = "male" AND salary > 1000000;
 ```
 
-```
-###exercicio 04
+### exercicio 04
 
+```
 -- a)
 SELECT MAX(salary) FROM Actor;
 -- b)
@@ -64,8 +64,8 @@ SELECT COUNT(*) FROM Actor WHERE gender = "female";
 SELECT SUM(salary) FROM Actor;
 ```
 
+### exercicio 05
 ```
-###exercicio 05
 -- a)
 SELECT COUNT(*), gender
 FROM Actor
@@ -86,8 +86,8 @@ SELECT AVG(salary), gender FROM Actor
 GROUP BY gender;
 ```
 
+### exercicio 06
 ```
-###exercicio 06
 -- a)
 ALTER TABLE Movie ADD playing_limit_date DATE;
 SELECT * FROM Movie;
