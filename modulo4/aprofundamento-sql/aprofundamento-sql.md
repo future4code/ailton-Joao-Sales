@@ -1,5 +1,5 @@
--- exercicio aprofundamento sql
-SET SQL_SAFE_UPDATES = 0;
+## Exercicio aprofundamento sql
+#### SET SQL_SAFE_UPDATES = 0;
 
 ### exercicio 01
 ```
