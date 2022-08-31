@@ -23,7 +23,10 @@ export async function criarEndereco(req: Request, res: Response) {
            bairro:consultaCep.bairro,
            cidade:consultaCep.localidade,
            estado:consultaCep.uf,
-           logradouro:consultaCep.logradouro
+           logradouro:consultaCep.logradouro,
+           CEP:consultaCep.CEP,
+           numero:consultaCep.numero,
+           complemento:consultaCep.complemento
        }
 
         
